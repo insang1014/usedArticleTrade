@@ -1,0 +1,96 @@
+.serchAddr div{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn.btn-signin {
+    background-color: rgb(104, 145, 162);
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    border: 0px;
+    transition: all 0.218s;
+    width: 50%;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(69, 141, 107);
+}
+
+.form-control.birth-group{
+    width: 25%;
+}
+
+/* USER REGISTER */
+
+#postcode {
+    width: 150px;
+    display: inline-block;
+}
+
+.input-group-addon, #birthday {
+    cursor: pointer;
+}
+
+.table td, th {
+    text-align: center;
+}
+
+/* My Page */
+#viewTable tr th {
+    width: 15%;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+#viewTable tr td {
+    width: 35%;
+}
+
+.mileage-btn {
+    float: right;
+    margin-bottom: 5px;
+}
+
+.modal-table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.modal-table tr th {
+    width: 15%;
+    padding-bottom: 15px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+#rateField {
+    float: left;
+    width: 130px;
+    margin: 0;
+}
+
+#ratePoint {
+    height: 24px;
+    padding-top: 2px;
+    float: left;
+}
+
+.modal-table tr td {
+    width: 35%;
+}
+
+.tradeList {
+    margin-top: 30px;
+}
+
+.ratingList {
+    margin-bottom: 50px;
+}
+
+hr {
+    margin-top: 0px;
+}

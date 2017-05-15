@@ -1,0 +1,99 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+/* -----------------------------------------------------------------------------
+
+  COMPENENTS - RATING
+
+----------------------------------------------------------------------------- */
+.c-rating {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.c-rating__item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 24px;
+    -ms-flex: 0 0 24px;
+    flex: 0 0 24px;
+    height: 24px;
+    background: url("/resource/img/stars.svg");
+    background-position: 0 0;
+    /*cursor: pointer;*/
+}
+
+/*.c-rating__item:hover,*/
+.c-rating__item.is-active {
+    background-position: -24px 0;
+}
+.c-rating__item.is-pointer {
+    cursor: pointer;
+}
+
+
+/*
+ * General styles
+ */
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    /*background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+}
+html { overflow-y:scroll; font-size:12px; font:inherit; }
+body { background-color:#fff; font-family: "NanumGothic", "Malgun Gothic", "dotum", Arial; }
+
+ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.table {
+    margin: 0px;
+}
+
+.navbar-header .navbar-brand {
+    color: #FFFFFF;
+}
+
+/*a:link, a:visited, a:active {*/
+    /*text-decoration: none;*/
+    /*color: #555;*/
+    /*letter-spacing: -1px*/
+/*}*/
+
+.card-container.card {
+    max-width: 400px;
+    padding: 40px 40px;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#ErrorTxt {
+    display: none;
+}
+
+.container textarea {
+    height: 120px;
+}

@@ -1,0 +1,85 @@
+.table {
+    margin: 0px;
+}
+
+.table td, th {
+    text-align: center;
+}
+
+.btnTop {
+    width: auto;
+    height: 50px;
+}
+
+.listTable {
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+}
+
+.viewer {
+    margin-bottom: 10px;
+}
+
+.viewImage img{
+    max-width:310px;
+    padding: 5px;
+}
+
+#viewTable tr th {
+    width: 20%;
+    background-color: #f5f5f5;
+}
+
+#viewTable tr td {
+    width: 30%;
+}
+
+#userInfo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 250px;
+}
+
+#userInfo .myInfo {
+    width: 49%;
+    float: left;
+}
+
+#userInfo .traderInfo {
+    width: 49%;
+    float: right;
+}
+
+#rateField {
+    float: left;
+    width: 130px;
+    margin: 0;
+}
+
+#ratePoint {
+    height: 24px;
+    padding-top: 2px;
+    float: left;
+}
+
+#tradeField {
+    width: 100%;
+    float:left;
+    padding:9px;
+    border-top:2px solid #ACACAC;
+    background-color:#F7F7F7
+}
+
+#tradeInfo {
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.g_sideway li{float:left;}
+#tradeField #price_info{
+    width:100%;
+    height:42px;
+    padding:6px 10px 6px 10px;
+    border:1px solid #C9CDD4;
+    background-color:#D9DEE4;
+}
