@@ -35,13 +35,15 @@ class Item_model extends Model
             }
         }
 
+        $query .= " ORDER BY serial DESC";
+
         if($nRowcnt > 0) {
             $query .= " LIMIT ".$nOffset.", ".$nRowcnt;
         }
 
         $stmt = $this->db->prepare($query);
         foreach ($rCombine["execute"] as $key => $val) {
-            $stmt->bindParam($key, $val);
+            $stmt->bindValue($key, $val);
         }
         $stmt->execute();
 
@@ -98,7 +100,8 @@ class Item_model extends Model
         try {
             $this->db->beginTransaction();
             foreach ($rParam as $key => $val) {
-                $stmt->bindParam($key, $val);
+                $val = htmlspecialchars($val);
+                $stmt->bindValue($key, $val);
             }
             $stmt->execute();
             $this->db->commit();
@@ -140,9 +143,12 @@ class Item_model extends Model
 
         try {
             $this->db->beginTransaction();
-            foreach ($rParam as $key => $val) {
-                $stmt->bindParam($key, $val);
+
+            foreach ($params as $key => $val) {
+                $val = htmlspecialchars($val);
+                $stmt->bindValue($key, $val);
             }
+
             $stmt->execute();
             $insert_id = $this->db->lastInsertId();
             $this->db->commit();
@@ -181,7 +187,7 @@ class Item_model extends Model
 
         $stmt = $this->db->prepare($query);
         foreach ($rCombine["execute"] as $key => $val) {
-            $stmt->bindParam($key, $val);
+            $stmt->bindValue($key, $val);
         }
         $result = $stmt->execute();
 

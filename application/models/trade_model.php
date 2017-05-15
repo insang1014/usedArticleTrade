@@ -30,7 +30,7 @@ class Trade_model extends Model
         }
 
         $stmt = $this->db->prepare("SELECT ".$sCoulumn." FROM {$this->_sDBName}.users WHERE user_id = :user_id");
-        $stmt->bindParam(":user_id", $user_id);
+        $stmt->bindValue(":user_id", $user_id);
         $stmt->execute();
         $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -75,7 +75,7 @@ class Trade_model extends Model
 
         $stmt = $this->db->prepare($query);
         foreach ($rCombine["execute"] as $key => $val) {
-            $stmt->bindParam($key, $val);
+            $stmt->bindValue($key, $val);
         }
         $stmt->execute();
 
@@ -129,7 +129,11 @@ class Trade_model extends Model
 
         try {
             $this->db->beginTransaction();
-            $stmt->execute($rParam);
+            foreach ($rParam as $key => $val) {
+                $val = htmlspecialchars($val);
+                $stmt->bindValue($key, $val);
+            }
+            $stmt->execute();
             $this->db->commit();
         } catch(\PDOExecption $e) {
             $this->db->rollback();
@@ -150,6 +154,7 @@ class Trade_model extends Model
         $rColumnKey = explode(",", preg_replace("/\s+/", "", $this->_rColumn[$sTable]));
 
         foreach ($rColumnKey as $key => $item) {
+
             if(isset($rParam[$item])) {
                 if($rParam[$item]) {
                     $rColumnKey[$key] = ":".$item;
@@ -169,8 +174,8 @@ class Trade_model extends Model
 
         try {
             $this->db->beginTransaction();
-            foreach ($rParam as $key => $val) {
-                $stmt->bindParam($key, $val);
+            foreach ($params as $key => $val) {
+                $stmt->bindValue($key, $val);
             }
             $stmt->execute();
             $insert_id = $this->db->lastInsertId();

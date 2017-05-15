@@ -40,9 +40,8 @@ class User_model extends Model
         }
         $stmt = $this->db->prepare($query);
 
-        print_r($rCombine["execute"]);
         foreach ($rCombine["execute"] as $key => $val) {
-            $stmt->bindParam($key, $val);
+            $stmt->bindValue($key, $val);
         }
         $stmt->execute();
 
@@ -81,7 +80,11 @@ class User_model extends Model
         $stmt = $this->db->prepare($query);
         try {
             $this->db->beginTransaction();
-            $stmt->execute($rParam);
+
+            foreach ($rParam as $key => $val) {
+                $stmt->bindValue($key, $val);
+            }
+            $stmt->execute();
             $this->db->commit();
         } catch(\PDOExecption $e) {
             $this->db->rollback();
@@ -119,10 +122,13 @@ class User_model extends Model
 
         try {
             $this->db->beginTransaction();
-            foreach ($rParam as $key => $val) {
-                $stmt->bindParam($key, $val);
+
+            foreach ($params as $key => $val) {
+                $val = htmlspecialchars($val);
+                $stmt->bindValue($key, $val);
             }
             $stmt->execute();
+
             $insert_id = $this->db->lastInsertId();
             $this->db->commit();
 

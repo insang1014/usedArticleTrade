@@ -43,8 +43,10 @@ $(document).ready(function(){
             $.post("/trade_api/approveTrade", data, function (result) {
                 if (result.success) {
                     alert("승인처리 되었습니다.\n\n마이페이지에서 진행상태를 확인해주세요.");
+                    location.href = "/user/mypage";
                 } else {
                     alert(result.data.message);
+                    location.reload();
                 }
             });
         }

@@ -13,7 +13,13 @@ function submitFunc(){
         }
 
         if(isTrue == true) {
-            if ($("#user_pwd").val() && $("#pwdCheck").val()) {
+            if ($("#user_pwd").val()) {
+                if ($("#user_pwd").val().length < 6) {
+                    alert("패스워드의 길이가 너무 짧습니다.");
+                    isTrue = false;
+                    return false;
+                }
+
                 if ($("#user_pwd").val() != $("#pwdCheck").val()) {
                     alert("패스워드를 확인해주시기바립니다.");
                     isTrue = false;

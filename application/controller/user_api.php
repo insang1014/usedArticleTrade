@@ -15,11 +15,6 @@ class User_api extends Controller
         }
     }
 
-    public function index()
-    {
-        $this->login();
-    }
-
     public function userLogin()
     {
 
@@ -132,7 +127,6 @@ class User_api extends Controller
                 $this->rData["massage"] = "파라미터 오류.";
             }
         }
-
         if($this->_bResult === true) {
 
             $user_model = $this->loadModel('user_model');

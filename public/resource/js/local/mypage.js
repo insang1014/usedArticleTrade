@@ -58,6 +58,7 @@ function mileageCharge() {
         isTrue = confirm("마일리지를 충전하시겠습니까??");
 
         if(isTrue) {
+            //$("#mileageForm").attr('action', '/user_api/mileageCharge').submit();
             $.post("/user_api/mileageCharge", {"charge_cost":$("#charge_cost").val(), "charge_type":$("#charge_type").val()}, function (result) {
                 if (result.success) {
                     alert("마일리지가 충전되었습니다.");

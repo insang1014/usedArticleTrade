@@ -143,6 +143,7 @@
                     <h3 class="modal-title" id="modalTitle">※ 마일리지 충전</h3>
                 </div>
                 <div class="modal-body">
+                    <form id="mileageForm" name="mileageForm" method="post">
                     <table class="table table-bordered table-responsive modal-table">
                         <tbody>
                         <tr>
@@ -169,7 +170,7 @@
                         </tr>
                         </tbody>
                     </table>
-
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" id="btn-charge">충전</button>
